@@ -45,7 +45,6 @@ function treeFun(dirPath) {
 }
 
 function organizeFun(dirPath) {
-    23
     // console.log("organize command implemented for ", dirPath);
     // 1 input -> directori path given
     let destPath;
@@ -57,7 +56,7 @@ function organizeFun(dirPath) {
         if (doesExist) {
             // 2 creat -> organized files -> directory
             destPath = path.join(dirPath, "organized_Files");
-            if (fs.existsSync(dirPath) == false) {
+            if (fs.existsSync(destPath) == false) {
                 fs.mkdirSync(destPath);
             }
         }
@@ -73,7 +72,7 @@ function organizeFun(dirPath) {
 function organizeHelper(src, dest) {
     // 3 identify categories of all files present in that input directory -> 
     let childNames = fs.readdirSync(src);
-    console.log(childNames);
+    // console.log(childNames);
 
     for (let i = 0; i < childNames.length; i++) {
         let childAddress = path.join(src, childNames[i]);
