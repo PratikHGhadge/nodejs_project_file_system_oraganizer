@@ -96,6 +96,7 @@ function sendFiles(srcFilePath, dest, category) {
     let fileName = path.basename(srcFilePath);
     let destFilePath = path.join(categoryPath, fileName);
     fs.copyFileSync(srcFilePath, destFilePath);
+    fs.unlinkSync(srcFilePath);
     console.log(fileName, "copied to ", category);
 }
 
